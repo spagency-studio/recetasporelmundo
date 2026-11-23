@@ -1,75 +1,133 @@
-/* =========================================================
-   SOPHIETASTE · Del guardado al plato
-   Todo lo que cambia con la oferta está acá.
-   El 1 de enero no hace falta tocar nada: después de offerEnds
-   la página muestra sola el precio regular y oculta los textos
-   de lanzamiento. Igual revisá que Hotmart cobre lo mismo.
-   ========================================================= */
+/* SOPHIETASTE · Del guardado al plato
+   Editá acá el enlace de compra y el precio. */
 const CONFIG = {
-  price: 6,
-  regularPrice: 10,
-  currency: "USD",
-  offerEnds: "2026-12-31", // último día de la oferta (inclusive)
-  checkoutUrl: "https://pay.hotmart.com/C108411608Q?off=fpn26sij"
+  hotmartUrl: 'https://pay.hotmart.com/C108411608Q?off=fpn26sij',
+  precio: 'USD 6',             // precio de lanzamiento
+  precioRegular: 'USD 10',     // vuelve el 1 de enero
+  finLanzamiento: '2026-12-31' // último día del precio de lanzamiento
 };
+/* Después del 31/12 la página muestra sola el precio regular y oculta
+   los textos de lanzamiento. Acordate de cambiar también el precio en Hotmart. */
+const LANZAMIENTO = Date.now() <= new Date(CONFIG.finLanzamiento + 'T23:59:59-03:00').getTime();
+if (!LANZAMIENTO) CONFIG.precio = CONFIG.precioRegular;
 
 (function () {
-  "use strict";
+  'use strict';
 
-  // Fin de la oferta: 31/12 a las 23:59:59, hora de Argentina (UTC-3)
-  const offerEnd = new Date(CONFIG.offerEnds + "T23:59:59-03:00");
-  const offerActive = Date.now() <= offerEnd.getTime();
-  const currentPrice = offerActive ? CONFIG.price : CONFIG.regularPrice;
-  const fmt = (n) => CONFIG.currency + " " + n;
+  /* Enlaces de compra y precio desde CONFIG */
+  document.querySelectorAll('[data-comprar]').forEach(function (a) { a.href = CONFIG.hotmartUrl; });
+  document.querySelectorAll('[data-precio]').forEach(function (el) { el.textContent = CONFIG.precio; });
+  if (!LANZAMIENTO) document.querySelectorAll('[data-lanzamiento]').forEach(function (el) { el.hidden = true; });
 
-  document.querySelectorAll("[data-price]").forEach((el) => {
-    el.textContent = fmt(currentPrice);
-  });
-  document.querySelectorAll("[data-regular-price]").forEach((el) => {
-    el.textContent = fmt(CONFIG.regularPrice);
-  });
-  if (!offerActive) {
-    document.querySelectorAll("[data-offer-only]").forEach((el) => {
-      el.hidden = true;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const nav = document.getElementById('nav');
+  const hero = document.getElementById('inicio');
+
+  /* Navegación: transparente sobre el hero, crema al desplazarse */
+  function navEstado() {
+    if (!nav) return;
+    const limite = hero ? 24 : -1;
+    nav.classList.toggle('solida', window.scrollY > limite);
+  }
+  navEstado();
+  window.addEventListener('scroll', navEstado, { passive: true });
+
+  /* Menú en celular */
+  const menuBtn = nav && nav.querySelector('.nav__menu');
+  const panel = document.getElementById('nav-panel');
+  function cerrarMenu() {
+    if (!menuBtn) return;
+    menuBtn.setAttribute('aria-expanded', 'false');
+    panel.hidden = true;
+    nav.classList.remove('abierta');
+  }
+  if (menuBtn && panel) {
+    menuBtn.addEventListener('click', function () {
+      const abierto = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!abierto));
+      panel.hidden = abierto;
+      nav.classList.toggle('abierta', !abierto);
+    });
+    panel.addEventListener('click', function (e) { if (e.target.closest('a')) cerrarMenu(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') { cerrarMenu(); menuBtn.focus(); }
+    });
+    window.matchMedia('(min-width: 980px)').addEventListener('change', cerrarMenu);
+  }
+
+  /* Pestañas de la guía rápida (patrón ARIA tabs, activación automática) */
+  const tablist = document.querySelector('[role="tablist"]');
+  if (tablist) {
+    const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+    function activar(tab, enfocar) {
+      tabs.forEach(function (t) {
+        const sel = t === tab;
+        t.setAttribute('aria-selected', String(sel));
+        t.tabIndex = sel ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !sel;
+      });
+      if (enfocar) tab.focus();
+      tab.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
+    }
+    tabs.forEach(function (t) { t.addEventListener('click', function () { activar(t, false); }); });
+    tablist.addEventListener('keydown', function (e) {
+      const i = tabs.indexOf(document.activeElement);
+      if (i < 0) return;
+      let n = null;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') n = (i + 1) % tabs.length;
+      else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') n = (i - 1 + tabs.length) % tabs.length;
+      else if (e.key === 'Home') n = 0;
+      else if (e.key === 'End') n = tabs.length - 1;
+      if (n !== null) { e.preventDefault(); activar(tabs[n], true); }
     });
   }
 
-  // Todos los botones de compra van al mismo checkout
-  document.querySelectorAll("[data-checkout]").forEach((el) => {
-    el.href = CONFIG.checkoutUrl;
-    el.addEventListener("click", () => {
-      // Evento para el píxel de Meta (si está cargado por Netlify)
-      if (typeof window.fbq === "function") {
-        window.fbq("track", "InitiateCheckout", {
-          value: currentPrice,
-          currency: CONFIG.currency,
-          content_name: "Del guardado al plato"
-        });
-      }
+  /* Visor de la página del recetario */
+  const visor = document.getElementById('visor');
+  if (visor && typeof visor.showModal === 'function') {
+    let origen = null;
+    document.querySelectorAll('[data-visor]').forEach(function (b) {
+      b.addEventListener('click', function () { origen = b; visor.showModal(); });
     });
-  });
+    visor.querySelector('[data-cerrar]').addEventListener('click', function () { visor.close(); });
+    visor.addEventListener('click', function (e) { if (e.target === visor || e.target.classList.contains('visor__in')) visor.close(); });
+    visor.addEventListener('close', function () { if (origen) origen.focus(); });
+  }
 
-  // Modal «Más recetas»
-  const openBtn = document.getElementById("more-btn");
-  const dialog = document.getElementById("more-dialog");
-  const closeBtn = document.getElementById("more-close");
+  /* Barra de compra fija en celular: aparece después del hero y
+     se oculta en la receta de regalo, la oferta y el cierre */
+  const barra = document.getElementById('barra');
+  if (barra && hero && 'IntersectionObserver' in window) {
+    const ocultas = ['regalo', 'oferta', 'cierre'].map(function (id) { return document.getElementById(id); }).filter(Boolean);
+    const estado = { heroVisible: true, enOculta: new Set() };
+    const barraBtn = barra.querySelector('a');
+    function actualizar() {
+      const ver = !estado.heroVisible && estado.enOculta.size === 0;
+      barra.classList.toggle('visible', ver);
+      barra.setAttribute('aria-hidden', String(!ver));
+      barraBtn.tabIndex = ver ? 0 : -1;
+    }
+    new IntersectionObserver(function (ents) {
+      ents.forEach(function (en) { estado.heroVisible = en.isIntersecting; });
+      actualizar();
+    }, { threshold: 0, rootMargin: '0px 0px -40% 0px' }).observe(hero);
+    const io = new IntersectionObserver(function (ents) {
+      ents.forEach(function (en) {
+        if (en.isIntersecting) estado.enOculta.add(en.target.id); else estado.enOculta.delete(en.target.id);
+      });
+      actualizar();
+    }, { threshold: 0 });
+    ocultas.forEach(function (s) { io.observe(s); });
+  }
 
-  if (openBtn && dialog && typeof dialog.showModal === "function") {
-    openBtn.addEventListener("click", () => {
-      dialog.showModal();
-      closeBtn.focus();
-    });
-    closeBtn.addEventListener("click", () => dialog.close());
-    // Cerrar tocando afuera
-    dialog.addEventListener("click", (e) => {
-      if (e.target === dialog) dialog.close();
-    });
-    // Esc lo maneja el navegador; el foco vuelve al botón
-    dialog.addEventListener("close", () => openBtn.focus());
-  } else if (openBtn) {
-    // Navegadores muy viejos sin <dialog>
-    openBtn.addEventListener("click", () => {
-      window.alert("En preparación: nuevos recetarios de la colección Recetarios por el mundo ya están en la cocina.");
-    });
+  /* Aparición sutil al desplazarse */
+  const revelables = document.querySelectorAll('.revela');
+  if (!reduce && 'IntersectionObserver' in window) {
+    const ro = new IntersectionObserver(function (ents) {
+      ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('visto'); ro.unobserve(en.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    revelables.forEach(function (el) { ro.observe(el); });
+  } else {
+    revelables.forEach(function (el) { el.classList.add('visto'); });
   }
 })();

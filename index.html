@@ -1,199 +1,641 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="es-AR" class="no-js">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Del guardado al plato · Recetario digital · SOPHIETASTE</title>
-  <meta name="description" content="88 recetas de Asia, Europa, América Latina y África, organizadas para responder a la pregunta de todos los días: ¿qué cocino hoy? Precio de lanzamiento USD 6 con la Guía de despensa del mundo de regalo.">
-  <meta name="theme-color" content="#CD795B">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Del guardado al plato · ¿Qué cocino hoy?">
-  <meta property="og:description" content="88 recetas del mundo + Guía de despensa del mundo de regalo. Precio de lanzamiento: USD 6 hasta el 31 de diciembre.">
-  <meta property="og:image" content="https://sophietaste.netlify.app/img/og.jpg">
-  <meta property="og:url" content="https://sophietaste.netlify.app/">
-
-  <link rel="preload" href="fonts/lora-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Del guardado al plato · Recetario digital · SOPHIETASTE</title>
+<meta name="description" content="88 recetas de 4 continentes, con una página y una foto por receta. Recetario digital en PDF de 104 páginas para dejar de guardar recetas y empezar a cocinarlas. Precio de lanzamiento USD 6 hasta el 31 de diciembre, con la Guía de despensa del mundo de regalo.">
+<link rel="canonical" href="https://sophietaste.netlify.app/">
+<meta name="theme-color" content="#251b15">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="SOPHIETASTE">
+<meta property="og:title" content="Del guardado al plato · Recetario digital · SOPHIETASTE">
+<meta property="og:description" content="88 recetas de 4 continentes, con una página y una foto por receta. PDF de 104 páginas. USD 6 hasta el 31 de diciembre + Guía de despensa del mundo de regalo.">
+<meta property="og:url" content="https://sophietaste.netlify.app/">
+<meta property="og:image" content="https://sophietaste.netlify.app/img/portada-1200.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1698">
+<meta property="og:image:alt" content="Portada del recetario Del guardado al plato">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/fraunces-latin-opsz-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/hero-ventana.jpg" as="image" fetchpriority="high">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.remove('no-js');</script>
 </head>
 <body>
-  <a class="skip" href="#oferta">Ir a la oferta</a>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
 
-  <!-- 1. Barra superior -->
-  <header class="topbar">
-    <div class="topbar__inner">
-      <a class="brand" href="#inicio" aria-label="SOPHIETASTE · Recetarios por el mundo, volver al inicio">
-        <span class="brand__name">SOPHIETASTE</span>
-        <span class="brand__collection">Recetarios por el mundo</span>
-      </a>
-      <a class="btn btn--buy btn--small" data-checkout href="https://pay.hotmart.com/C108411608Q?off=fpn26sij">
-        Comprar · <span data-price>USD 6</span>
-      </a>
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="marca" href="#inicio" aria-label="SOPHIETASTE, Recetarios por el mundo, ir al inicio">
+      <span class="marca__nombre">SOPHIETASTE</span>
+      <span class="marca__col">Recetarios por el mundo</span>
+    </a>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#recetario">El recetario</a>
+      <a href="#recetas">Las recetas</a>
+      <a href="#regalo">Receta gratis</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+    <a class="btn btn--chico nav__comprar" data-comprar href="https://pay.hotmart.com/C108411608Q?off=fpn26sij">Comprar · <span data-precio>USD 6</span></a>
+    <button class="nav__menu" type="button" aria-expanded="false" aria-controls="nav-panel"><span></span><span class="sr">Menú</span></button>
+  </div>
+  <div class="nav__panel" id="nav-panel" hidden>
+    <nav aria-label="Principal en celular">
+      <a href="#recetario">El recetario</a>
+      <a href="#recetas">Las recetas</a>
+      <a href="#regalo">Receta gratis</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+    <a class="btn" data-comprar href="https://pay.hotmart.com/C108411608Q?off=fpn26sij">Comprar · <span data-precio>USD 6</span></a>
+  </div>
+</header>
+
+<main id="contenido" tabindex="-1">
+
+<!-- 2. HERO -->
+<section class="hero" id="inicio" aria-labelledby="hero-titulo">
+  <div class="hero__fondo">
+    <img src="img/hero-ventana.jpg" alt="" width="1200" height="800" fetchpriority="high">
+  </div>
+  <div class="wrap hero__grid">
+    <div>
+      <p class="etiqueta">Recetario digital · Volumen 01</p>
+      <h1 id="hero-titulo">¿Qué cocino <em>hoy?</em></h1>
+      <p class="hero__bajada">88 recetas de 4 continentes, con una página y una foto por receta, para que dejes de guardarlas y empieces a cocinarlas.</p>
+      <div class="hero__acciones">
+        <a class="btn" data-comprar href="https://pay.hotmart.com/C108411608Q?off=fpn26sij">Quiero el recetario · <span data-precio>USD 6</span> <span class="flecha" aria-hidden="true">→</span></a>
+        <a class="link" href="#regalo">Probá una receta gratis</a>
+      </div>
+      <p class="hero__bono" data-lanzamiento><span aria-hidden="true">🎁</span> Con la <b>Guía de despensa del mundo</b> de regalo · Precio de lanzamiento hasta el 31 de diciembre</p>
+      <p class="garantia">Pago seguro con Hotmart · Garantía de 7 días antes de descargar el PDF</p>
     </div>
-  </header>
+    <div class="hero__libro">
+      <figure>
+        <img src="img/portada.jpg" alt="Portada del recetario Del guardado al plato, Volumen 01: 88 recetas, 4 continentes" width="720" height="1019">
+      </figure>
+    </div>
+  </div>
+  <p class="hero__leyenda">Imágenes ilustrativas</p>
+</section>
 
-  <main id="inicio">
-    <!-- 2. Hero -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__inner">
-        <div class="hero__text">
-          <p class="eyebrow">Edición 01 · Recetario digital</p>
-          <h1 id="hero-title">¿Qué cocino hoy?</h1>
-          <p class="hero__lead"><em>Del guardado al plato</em> reúne 88 recetas de Asia, Europa, América Latina y África, organizadas para que dejes de guardarlas y empieces a cocinarlas.</p>
-          <ul class="facts" aria-label="Formato">
-            <li>PDF de 100 páginas</li>
-            <li>Para el celular o para imprimir</li>
-          </ul>
-          <div class="hero__actions">
-            <a class="btn btn--buy" data-checkout href="https://pay.hotmart.com/C108411608Q?off=fpn26sij">
-              Comprar el recetario · <span data-price>USD 6</span>
-            </a>
-            <a class="btn btn--ghost" href="#receta">Probá una receta gratis</a>
+<!-- 3. CINTA -->
+<div class="cinta" aria-label="Asia, Europa, América Latina, África. 88 recetas, 4 continentes">
+  <div class="cinta__pista">
+    <div class="cinta__grupo"><span>Asia</span><span>Europa</span><span>América Latina</span><span>África</span><span>88 recetas</span><span>4 continentes</span></div>
+    <div class="cinta__grupo" aria-hidden="true"><span>Asia</span><span>Europa</span><span>América Latina</span><span>África</span><span>88 recetas</span><span>4 continentes</span></div>
+  </div>
+</div>
+
+<!-- 4. PROBLEMA -->
+<section class="seccion problema" aria-labelledby="problema-titulo">
+  <div class="wrap problema__grid">
+    <div class="revela">
+      <p class="etiqueta">Seguro te pasó</p>
+      <h2 id="problema-titulo">Encontrás una receta increíble. La guardás. <em>Y terminás cocinando lo de siempre.</em></h2>
+    </div>
+    <div class="problema__lado revela">
+      <ul class="guardados" aria-label="Recetas guardadas que nunca se cocinaron">
+        <li>El ramen que viste un domingo <span class="marca-guardado"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1h10v14l-5-3.5L3 15z"/></svg>Guardado</span></li>
+        <li>La tarta del video de un minuto <span class="marca-guardado"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1h10v14l-5-3.5L3 15z"/></svg>Guardado</span></li>
+        <li>El curry que te mandaron por mensaje <span class="marca-guardado"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1h10v14l-5-3.5L3 15z"/></svg>Guardado</span></li>
+        <li>El postre para cuando vengan visitas <span class="marca-guardado"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1h10v14l-5-3.5L3 15z"/></svg>Guardado</span></li>
+      </ul>
+      <p class="problema__cierre"><strong>No es que te falten ideas.</strong> A veces, lo que falta es tenerlas a mano, organizadas y listas para usar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5. EL RECETARIO -->
+<section class="seccion fondo-arena" id="recetario" aria-labelledby="recetario-titulo">
+  <div class="wrap">
+    <div class="recetario__cab revela">
+      <div>
+        <p class="etiqueta">El recetario</p>
+        <h2 class="h-l" id="recetario-titulo">Una herramienta: <em>abrís, elegís y cocinás.</em></h2>
+      </div>
+      <p class="bajada">Estas páginas no están pensadas para leerse de corrido. Recetas de distintos lugares del mundo, cocinadas y probadas, para que elegir tu próxima comida sea más fácil.</p>
+    </div>
+
+    <div class="libro">
+      <div class="libro__vista revela">
+        <figure>
+          <img src="img/portada.jpg" alt="Portada del recetario" width="720" height="1019" loading="lazy" decoding="async">
+          <figcaption class="leyenda">Portada · Imagen ilustrativa</figcaption>
+        </figure>
+        <figure>
+          <button class="ampliar" type="button" data-visor aria-haspopup="dialog">
+            <img src="img/pagina-pad-thai.jpg" alt="Página 8 del recetario: receta de fideos salteados tailandeses (pad thai)" width="640" height="906" loading="lazy" decoding="async">
+            <span class="ampliar__txt">Ver la página completa</span>
+          </button>
+          <figcaption class="leyenda">Página 8 · Imagen ilustrativa</figcaption>
+        </figure>
+      </div>
+      <ol class="notas revela">
+        <li>
+          <h3>Una página y una foto por receta</h3>
+          <p>Tiempos, porciones y dificultad arriba de todo. Ingredientes en un recuadro y el paso a paso numerado, en la misma página.</p>
+        </li>
+        <li>
+          <h3>Alérgenos, consejo y sustitución</h3>
+          <p>Cada receta marca sus alérgenos, suma un consejo para que salga bien y una alternativa por si te falta algo.</p>
+        </li>
+        <li>
+          <h3>Índice visual con enlaces</h3>
+          <p>Las 88 recetas por continente, con foto y etiquetas. En el celular tocás el número de página y vas directo a la receta.</p>
+        </li>
+      </ol>
+    </div>
+
+    <div class="cifras revela" role="list">
+      <div class="cifra" role="listitem"><span class="cifra__n">88</span><span class="cifra__t">recetas completas, 22 por continente</span></div>
+      <div class="cifra" role="listitem"><span class="cifra__n">4</span><span class="cifra__t">continentes: Asia, Europa, América Latina y África</span></div>
+      <div class="cifra" role="listitem"><span class="cifra__n">104</span><span class="cifra__t">páginas, para el celular o para imprimir</span></div>
+      <div class="cifra" role="listitem"><span class="cifra__n">7</span><span class="cifra__t">días de garantía antes de descargar el PDF</span></div>
+    </div>
+
+    <div class="vistazos">
+      <figure class="vistazo revela">
+        <div class="vistazo__marco">
+          <img src="img/vistazo-indice.jpg" alt="Parte superior del índice visual: recetas de Asia y Europa con foto, etiquetas y número de página" width="1200" height="781" loading="lazy" decoding="async">
+          <span class="vistazo__corte">Continúa en el recetario</span>
+        </div>
+        <figcaption><b>Índice visual</b> · págs. 5 y 6 · Imagen ilustrativa</figcaption>
+      </figure>
+      <figure class="vistazo revela">
+        <div class="vistazo__marco">
+          <img src="img/vistazo-guia.jpg" alt="Parte superior de la guía rápida ¿Qué cocino hoy?, con recetas para cuando tenés poco tiempo" width="1200" height="781" loading="lazy" decoding="async">
+          <span class="vistazo__corte">Continúa en el recetario</span>
+        </div>
+        <figcaption><b>Guía rápida «¿Qué cocino hoy?»</b> · págs. 99 a 101 · Imagen ilustrativa</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<dialog class="visor" id="visor" aria-label="Página 8 del recetario, ampliada">
+  <button class="visor__cerrar" type="button" data-cerrar>Cerrar <span aria-hidden="true">✕</span></button>
+  <div class="visor__in">
+    <img src="img/pagina-pad-thai-1200.jpg" alt="Página 8 del recetario: receta completa de fideos salteados tailandeses (pad thai), con foto, ingredientes y paso a paso" width="1200" height="1698" loading="lazy" decoding="async">
+    <p class="leyenda">Página 8 del recetario · Imagen ilustrativa</p>
+  </div>
+</dialog>
+
+<!-- 6. EXPERIENCIA GASTRONÓMICA -->
+<section class="seccion oscuro experiencia" id="recetas" aria-labelledby="recetas-titulo">
+  <div class="wrap">
+    <div class="experiencia__cab revela">
+      <div>
+        <p class="etiqueta">Las recetas</p>
+        <h2 class="h-l" id="recetas-titulo">Cuatro continentes, <em>una sola cocina: la tuya.</em></h2>
+      </div>
+      <p class="bajada">22 recetas por continente. Cuando una receta es una versión adaptada para una cocina doméstica, lo vas a ver aclarado en la misma página.</p>
+    </div>
+
+    <div class="mosaico">
+      <figure class="plato plato--a revela">
+        <img src="img/ceviche.jpg" alt="Ceviche: pescado marinado en lima" width="1200" height="800" loading="lazy" decoding="async">
+        <figcaption><span class="plato__nombre">Ceviche</span><span class="plato__pais">Perú</span></figcaption>
+        <span class="plato__ilus">Imagen ilustrativa</span>
+      </figure>
+      <figure class="plato plato--b revela">
+        <img src="img/shakshuka.jpg" alt="Shakshuka: huevos en salsa de tomate especiada" width="1200" height="800" loading="lazy" decoding="async">
+        <figcaption><span class="plato__nombre">Shakshuka</span><span class="plato__pais">Norte de África</span></figcaption>
+        <span class="plato__ilus">Imagen ilustrativa</span>
+      </figure>
+      <figure class="plato plato--c revela">
+        <img src="img/bibimbap.jpg" alt="Bibimbap: bol coreano de arroz y verduras" width="1200" height="800" loading="lazy" decoding="async">
+        <figcaption><span class="plato__nombre">Bibimbap</span><span class="plato__pais">Corea</span></figcaption>
+        <span class="plato__ilus">Imagen ilustrativa</span>
+      </figure>
+      <figure class="plato plato--d revela">
+        <img src="img/risotto-hongos.jpg" alt="Risotto de hongos" width="1200" height="800" loading="lazy" decoding="async">
+        <figcaption><span class="plato__nombre">Risotto de hongos</span><span class="plato__pais">Norte de Italia</span></figcaption>
+        <span class="plato__ilus">Imagen ilustrativa</span>
+      </figure>
+      <figure class="plato plato--e revela">
+        <img src="img/lomo-saltado.jpg" alt="Lomo saltado: salteado de carne con papas" width="1200" height="800" loading="lazy" decoding="async">
+        <figcaption><span class="plato__nombre">Lomo saltado</span><span class="plato__pais">Perú</span></figcaption>
+        <span class="plato__ilus">Imagen ilustrativa</span>
+      </figure>
+      <figure class="plato plato--f revela">
+        <img src="img/tajine.jpg" alt="Tajine djaj: pollo con limón y aceitunas" width="1200" height="800" loading="lazy" decoding="async">
+        <figcaption><span class="plato__nombre">Tajine</span><span class="plato__pais">Marruecos</span></figcaption>
+        <span class="plato__ilus">Imagen ilustrativa</span>
+      </figure>
+    </div>
+
+    <ol class="capitulos">
+      <li class="capitulo revela">
+        <figure class="plato">
+          <img src="img/cap-asia.jpg" alt="Foto de apertura del capítulo Asia: sopa de fideos con pollo" width="1200" height="800" loading="lazy" decoding="async">
+          <span class="plato__ilus">Imagen ilustrativa</span>
+        </figure>
+        <div class="capitulo__txt">
+          <p class="capitulo__num">Capítulo 01</p>
+          <h3>Asia</h3>
+          <p class="capitulo__intro">Woks, vapores y boles: platos de fuego vivo donde lo dulce, lo ácido y lo picante conviven en el mismo bocado.</p>
+          <p class="capitulo__datos"><span>22 recetas</span><span>Págs. 8–29</span></p>
+          <p class="capitulo__paises">Tailandia · China · Corea · Japón · India · Norte de India · Pakistán · Indonesia · Vietnam · Filipinas · Malasia · Líbano · Levante · Irán · Nepal · Tíbet</p>
+        </div>
+      </li>
+      <li class="capitulo revela">
+        <figure class="plato">
+          <img src="img/cap-europa.jpg" alt="Foto de apertura del capítulo Europa: pasta a la carbonara" width="1200" height="800" loading="lazy" decoding="async">
+          <span class="plato__ilus">Imagen ilustrativa</span>
+        </figure>
+        <div class="capitulo__txt">
+          <p class="capitulo__num">Capítulo 02</p>
+          <h3>Europa</h3>
+          <p class="capitulo__intro">Cocina de mercado y de sobremesa: pastas, guisos lentos, panes y postres que pasan de generación en generación.</p>
+          <p class="capitulo__datos"><span>22 recetas</span><span>Págs. 31–52</span></p>
+          <p class="capitulo__paises">Italia · Norte de Italia · España · Francia · Grecia · Polonia · Hungría · Ucrania · Portugal · Reino Unido · Irlanda · Suecia · Sur de Alemania · Austria</p>
+        </div>
+      </li>
+      <li class="capitulo revela">
+        <figure class="plato">
+          <img src="img/cap-america-latina.jpg" alt="Foto de apertura del capítulo América Latina: empanadas de carne al horno" width="1200" height="800" loading="lazy" decoding="async">
+          <span class="plato__ilus">Imagen ilustrativa</span>
+        </figure>
+        <div class="capitulo__txt">
+          <p class="capitulo__num">Capítulo 03</p>
+          <h3>América Latina</h3>
+          <p class="capitulo__intro">Maíz, papa, porotos y mucho para compartir. Recetas de olla grande, de domingo y de reunión.</p>
+          <p class="capitulo__datos"><span>22 recetas</span><span>Págs. 54–75</span></p>
+          <p class="capitulo__paises">Perú · México · Argentina · Región andina · Chile · Brasil · Venezuela · Colombia · Caribe · Cuba · Costa Rica · Nicaragua · El Salvador · Ecuador · Paraguay · Uruguay · América Latina</p>
+        </div>
+      </li>
+      <li class="capitulo revela">
+        <figure class="plato">
+          <img src="img/cap-africa.jpg" alt="Foto de apertura del capítulo África: cuscús con verduras" width="1200" height="800" loading="lazy" decoding="async">
+          <span class="plato__ilus">Imagen ilustrativa</span>
+        </figure>
+        <div class="capitulo__txt">
+          <p class="capitulo__num">Capítulo 04</p>
+          <h3>África</h3>
+          <p class="capitulo__intro">Especias tostadas, guisos que se cocinan sin apuro y una despensa generosa en legumbres, maní y cítricos.</p>
+          <p class="capitulo__datos"><span>22 recetas</span><span>Págs. 77–98</span></p>
+          <p class="capitulo__paises">Norte de África · Marruecos · Egipto · África occidental · Nigeria · Senegal · Mali · Etiopía · Eritrea · Sudáfrica · Kenia · Tanzania · Zanzíbar · costa suajili · Mozambique · Angola</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- 7. GUÍA RÁPIDA -->
+<section class="seccion guia" id="guia" aria-labelledby="guia-titulo">
+  <div class="wrap">
+    <div class="guia__cab revela">
+      <div>
+        <p class="etiqueta">Guía rápida</p>
+        <h2 class="h-l" id="guia-titulo">Empezá por lo que <em>te pasa hoy.</em></h2>
+      </div>
+      <p class="bajada">Así funciona la guía «¿Qué cocino hoy?» del recetario: elegís tu momento y vas directo a la página de la receta.</p>
+    </div>
+<div class="tabs" role="tablist" aria-label="Elegí tu momento">
+<button class="tab" role="tab" id="tab-tiempo" aria-controls="panel-tiempo" aria-selected="true">Tengo poco tiempo</button>
+<button class="tab" role="tab" id="tab-economico" aria-controls="panel-economico" aria-selected="false" tabindex="-1">Quiero gastar poco</button>
+<button class="tab" role="tab" id="tab-visitas" aria-controls="panel-visitas" aria-selected="false" tabindex="-1">Vienen visitas</button>
+<button class="tab" role="tab" id="tab-sincarne" aria-controls="panel-sincarne" aria-selected="false" tabindex="-1">No como carne</button>
+<button class="tab" role="tab" id="tab-frio" aria-controls="panel-frio" aria-selected="false" tabindex="-1">Hace frío</button>
+<button class="tab" role="tab" id="tab-arroz" aria-controls="panel-arroz" aria-selected="false" tabindex="-1">Me sobró arroz</button>
+<button class="tab" role="tab" id="tab-dulce" aria-controls="panel-dulce" aria-selected="false" tabindex="-1">Quiero algo dulce</button>
+</div>
+<div class="panel" role="tabpanel" id="panel-tiempo" aria-labelledby="tab-tiempo" tabindex="0">
+<p class="panel__q"><span>¿Tenés poco tiempo?</span> Listas en menos de 30 minutos. <span class="panel__src">Guía rápida, pág. 99</span></p>
+<ol class="picks">
+<li class="pick"><img src="img/guia/p009.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Arroz frito con huevo y arvejas</span><span class="pick__orig">Yangzhou chao fan</span></span><span class="pick__pg"><span class="sr">página </span>pág. 9</span></li>
+<li class="pick"><img src="img/guia/p010.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Tofu picante con carne</span><span class="pick__orig">Mapo tofu</span></span><span class="pick__pg"><span class="sr">página </span>pág. 10</span></li>
+<li class="pick"><img src="img/guia/p012.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Bol de pollo y huevo</span><span class="pick__orig">Oyakodon</span></span><span class="pick__pg"><span class="sr">página </span>pág. 12</span></li>
+<li class="pick"><img src="img/guia/p017.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Arroz frito indonesio</span><span class="pick__orig">Nasi goreng</span></span><span class="pick__pg"><span class="sr">página </span>pág. 17</span></li>
+<li class="pick"><img src="img/guia/p025.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Crema de garbanzos</span><span class="pick__orig">Hummus</span></span><span class="pick__pg"><span class="sr">página </span>pág. 25</span></li>
+<li class="pick"><img src="img/guia/p031.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Pasta a la carbonara</span><span class="pick__orig">Spaghetti alla carbonara</span></span><span class="pick__pg"><span class="sr">página </span>pág. 31</span></li>
+</ol>
+<p class="panel__more">y 6 recetas más <span>· Imágenes ilustrativas</span></p>
+</div>
+<div class="panel" role="tabpanel" id="panel-economico" aria-labelledby="tab-economico" tabindex="0" hidden>
+<p class="panel__q"><span>¿Buscás algo económico?</span> Ingredientes simples, buen rendimiento. <span class="panel__src">Guía rápida, pág. 100</span></p>
+<ol class="picks">
+<li class="pick"><img src="img/guia/p014.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Lentejas con especias</span><span class="pick__orig">Dal tadka</span></span><span class="pick__pg"><span class="sr">página </span>pág. 14</span></li>
+<li class="pick"><img src="img/guia/p016.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Garbanzos especiados</span><span class="pick__orig">Chana masala</span></span><span class="pick__pg"><span class="sr">página </span>pág. 16</span></li>
+<li class="pick"><img src="img/guia/p024.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Lentejas con arroz y cebolla crocante</span><span class="pick__orig">Mujaddara</span></span><span class="pick__pg"><span class="sr">página </span>pág. 24</span></li>
+<li class="pick"><img src="img/guia/p035.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Tortilla de papas</span><span class="pick__orig">Tortilla de patatas</span></span><span class="pick__pg"><span class="sr">página </span>pág. 35</span></li>
+<li class="pick"><img src="img/guia/p049.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Puré irlandés con repollo</span><span class="pick__orig">Colcannon</span></span><span class="pick__pg"><span class="sr">página </span>pág. 49</span></li>
+<li class="pick"><img src="img/guia/p046.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Sopa de papa y col verde</span><span class="pick__orig">Caldo verde</span></span><span class="pick__pg"><span class="sr">página </span>pág. 46</span></li>
+</ol>
+<p class="panel__more">y 6 recetas más <span>· Imágenes ilustrativas</span></p>
+</div>
+<div class="panel" role="tabpanel" id="panel-visitas" aria-labelledby="tab-visitas" tabindex="0" hidden>
+<p class="panel__q"><span>¿Querés cocinar para alguien?</span> Platos que lucen y permiten disfrutar la mesa. <span class="panel__src">Guía rápida, pág. 100</span></p>
+<ol class="picks">
+<li class="pick"><img src="img/guia/p015.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Pollo en salsa de tomate y manteca</span><span class="pick__orig">Murgh makhani (butter chicken)</span></span><span class="pick__pg"><span class="sr">página </span>pág. 15</span></li>
+<li class="pick"><img src="img/guia/p032.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Risotto de hongos</span><span class="pick__orig">Risotto ai funghi</span></span><span class="pick__pg"><span class="sr">página </span>pág. 32</span></li>
+<li class="pick"><img src="img/guia/p041.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Pastel griego de berenjenas y carne</span><span class="pick__orig">Moussaka</span></span><span class="pick__pg"><span class="sr">página </span>pág. 41</span></li>
+<li class="pick"><img src="img/guia/p034.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Postre de café y mascarpone</span><span class="pick__orig">Tiramisù</span></span><span class="pick__pg"><span class="sr">página </span>pág. 34</span></li>
+<li class="pick"><img src="img/guia/p055.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Salteado de carne con papas</span><span class="pick__orig">Lomo saltado</span></span><span class="pick__pg"><span class="sr">página </span>pág. 55</span></li>
+<li class="pick"><img src="img/guia/p061.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Pastel de maíz y carne</span><span class="pick__orig">Pastel de choclo</span></span><span class="pick__pg"><span class="sr">página </span>pág. 61</span></li>
+</ol>
+<p class="panel__more">y 4 recetas más <span>· Imágenes ilustrativas</span></p>
+</div>
+<div class="panel" role="tabpanel" id="panel-sincarne" aria-labelledby="tab-sincarne" tabindex="0" hidden>
+<p class="panel__q"><span>¿Comés sin carne?</span> Vegetarianas con personalidad. <span class="panel__src">Guía rápida, pág. 100</span></p>
+<ol class="picks">
+<li class="pick"><img src="img/guia/p011.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Bol coreano de arroz y verduras</span><span class="pick__orig">Bibimbap</span></span><span class="pick__pg"><span class="sr">página </span>pág. 11</span></li>
+<li class="pick"><img src="img/guia/p018.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Ensalada indonesia con salsa de maní</span><span class="pick__orig">Gado-gado</span></span><span class="pick__pg"><span class="sr">página </span>pág. 18</span></li>
+<li class="pick"><img src="img/guia/p038.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Verduras de Provenza al horno</span><span class="pick__orig">Ratatouille</span></span><span class="pick__pg"><span class="sr">página </span>pág. 38</span></li>
+<li class="pick"><img src="img/guia/p043.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Empanaditas polacas de papa y queso</span><span class="pick__orig">Pierogi ruskie</span></span><span class="pick__pg"><span class="sr">página </span>pág. 43</span></li>
+<li class="pick"><img src="img/guia/p057.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Totopos con salsa verde</span><span class="pick__orig">Chilaquiles verdes</span></span><span class="pick__pg"><span class="sr">página </span>pág. 57</span></li>
+<li class="pick"><img src="img/guia/p071.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Tortillas rellenas de queso y porotos</span><span class="pick__orig">Pupusas</span></span><span class="pick__pg"><span class="sr">página </span>pág. 71</span></li>
+</ol>
+<p class="panel__more">y 2 recetas más <span>· Imágenes ilustrativas</span></p>
+</div>
+<div class="panel" role="tabpanel" id="panel-frio" aria-labelledby="tab-frio" tabindex="0" hidden>
+<p class="panel__q"><span>¿Hace frío?</span> De olla y cuchara. <span class="panel__src">Guía rápida, pág. 101</span></p>
+<ol class="picks">
+<li class="pick"><img src="img/guia/p019.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Sopa vietnamita de pollo y fideos</span><span class="pick__orig">Phở gà</span></span><span class="pick__pg"><span class="sr">página </span>pág. 19</span></li>
+<li class="pick"><img src="img/guia/p039.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Sopa de cebolla gratinada</span><span class="pick__orig">Soupe à l&#x27;oignon</span></span><span class="pick__pg"><span class="sr">página </span>pág. 39</span></li>
+<li class="pick"><img src="img/guia/p044.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Guiso húngaro de carne y pimentón</span><span class="pick__orig">Gulyás</span></span><span class="pick__pg"><span class="sr">página </span>pág. 44</span></li>
+<li class="pick"><img src="img/guia/p060.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Guiso de maíz y zapallo</span><span class="pick__orig">Locro</span></span><span class="pick__pg"><span class="sr">página </span>pág. 60</span></li>
+<li class="pick"><img src="img/guia/p067.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Sopa de pollo y tres papas</span><span class="pick__orig">Ajiaco santafereño</span></span><span class="pick__pg"><span class="sr">página </span>pág. 67</span></li>
+<li class="pick"><img src="img/guia/p088.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Guiso de maní</span><span class="pick__orig">Mafé</span></span><span class="pick__pg"><span class="sr">página </span>pág. 88</span></li>
+</ol>
+<p class="panel__more">Son las 6 recetas de la guía para este momento <span>· Imágenes ilustrativas</span></p>
+</div>
+<div class="panel" role="tabpanel" id="panel-arroz" aria-labelledby="tab-arroz" tabindex="0" hidden>
+<p class="panel__q"><span>¿Te sobró arroz?</span> Para resolver con lo que está en la heladera. <span class="panel__src">Guía rápida, pág. 101</span></p>
+<ol class="picks">
+<li class="pick"><img src="img/guia/p009.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Arroz frito con huevo y arvejas</span><span class="pick__orig">Yangzhou chao fan</span></span><span class="pick__pg"><span class="sr">página </span>pág. 9</span></li>
+<li class="pick"><img src="img/guia/p017.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Arroz frito indonesio</span><span class="pick__orig">Nasi goreng</span></span><span class="pick__pg"><span class="sr">página </span>pág. 17</span></li>
+<li class="pick"><img src="img/guia/p070.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Arroz con porotos negros</span><span class="pick__orig">Gallo pinto</span></span><span class="pick__pg"><span class="sr">página </span>pág. 70</span></li>
+</ol>
+<p class="panel__more">Son las 3 recetas de la guía para este momento <span>· Imágenes ilustrativas</span></p>
+</div>
+<div class="panel" role="tabpanel" id="panel-dulce" aria-labelledby="tab-dulce" tabindex="0" hidden>
+<p class="panel__q"><span>¿Tenés antojo de algo dulce?</span> Para la merienda o el postre. <span class="panel__src">Guía rápida, pág. 101</span></p>
+<ol class="picks">
+<li class="pick"><img src="img/guia/p029.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Panqueques rellenos de dulce</span><span class="pick__orig">Dorayaki</span></span><span class="pick__pg"><span class="sr">página </span>pág. 29</span></li>
+<li class="pick"><img src="img/guia/p028.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Arroz dulce con mango</span><span class="pick__orig">Khao niao mamuang</span></span><span class="pick__pg"><span class="sr">página </span>pág. 28</span></li>
+<li class="pick"><img src="img/guia/p052.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Rollo de manzana</span><span class="pick__orig">Apfelstrudel</span></span><span class="pick__pg"><span class="sr">página </span>pág. 52</span></li>
+<li class="pick"><img src="img/guia/p074.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Alfajores de maicena</span></span><span class="pick__pg"><span class="sr">página </span>pág. 74</span></li>
+<li class="pick"><img src="img/guia/p075.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Bizcocho bañado en tres leches</span><span class="pick__orig">Pastel de tres leches</span></span><span class="pick__pg"><span class="sr">página </span>pág. 75</span></li>
+<li class="pick"><img src="img/guia/p098.jpg" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="pick__txt"><span class="pick__name">Pastel de sémola y almíbar</span><span class="pick__orig">Basbousa</span></span><span class="pick__pg"><span class="sr">página </span>pág. 98</span></li>
+</ol>
+<p class="panel__more">Son las 6 recetas de la guía para este momento <span>· Imágenes ilustrativas</span></p>
+</div>
+  </div>
+</section>
+
+<!-- 8. BENEFICIOS -->
+<section class="seccion fondo-arena beneficios" aria-labelledby="beneficios-titulo">
+  <div class="wrap beneficios__grid">
+    <div class="revela">
+      <p class="etiqueta">Por qué funciona</p>
+      <h2 class="h-l" id="beneficios-titulo">Menos tiempo pensando. <em>Más tiempo disfrutando.</em></h2>
+    </div>
+    <ol class="lista-num revela">
+      <li><h3>Decidís en el momento</h3><p>La guía rápida ordena las recetas según lo que te pasa hoy: poco tiempo, poca plata, visitas, frío o antojo de algo dulce.</p></li>
+      <li><h3>Sabés en qué te metés</h3><p>Antes de comprometerte, cada receta te muestra tiempos, porciones, dificultad y alérgenos.</p></li>
+      <li><h3>Sin pausar un video diez veces</h3><p>Cantidades en gramos, mililitros y unidades, y pasos numerados. Todo en una página que podés tener abierta mientras cocinás.</p></li>
+      <li><h3>Ves el plato antes de elegirlo</h3><p>Cada receta tiene su foto, y el índice visual te las muestra todas juntas por continente.</p></li>
+      <li><h3>Organizás la semana</h3><p>Una lista de compras para completar y un planificador semanal, en una página cada uno.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 9. RECETA DE REGALO -->
+<section class="seccion regalo" id="regalo" aria-labelledby="regalo-titulo">
+  <div class="wrap">
+    <div class="regalo__cab revela">
+      <p class="etiqueta">Receta de regalo</p>
+      <h2 class="h-l" id="regalo-titulo">Cociná gratis <em>el pad thai completo.</em></h2>
+      <p>Es la receta N.º 01, tal como aparece en la página 8 del recetario. Así son las 88.</p>
+    </div>
+
+    <article class="receta revela" aria-labelledby="receta-titulo">
+      <figure class="receta__foto">
+        <img src="img/pad-thai.jpg" alt="Pad thai servido con lima, maní y brotes de soja" width="1200" height="800" loading="lazy" decoding="async">
+        <span class="plato__ilus">Imagen ilustrativa</span>
+        <span class="receta__num">N.º 01</span>
+      </figure>
+      <div class="receta__cuerpo">
+        <p class="receta__lugar">Asia · Tailandia</p>
+        <h3 id="receta-titulo">Fideos salteados tailandeses</h3>
+        <p class="receta__orig">Pad thai</p>
+        <div class="receta__intro">
+          <p>Dulce, ácido y salado en un mismo bocado. Se resuelve en una sola sartén y sorprende como comida de restaurante.</p>
+          <p>Tailandia. Se difundió como plato nacional hacia las décadas de 1930 y 1940.</p>
+        </div>
+        <dl class="ficha">
+          <div><dt>Preparación</dt><dd>20 min</dd></div>
+          <div><dt>Cocción</dt><dd>10 min</dd></div>
+          <div><dt>Total</dt><dd>30 min</dd></div>
+          <div><dt>Porciones</dt><dd>2</dd></div>
+          <div><dt>Dificultad</dt><dd>Media</dd></div>
+        </dl>
+        <span class="chip">Salir de la rutina</span>
+
+        <div class="receta__grid">
+          <div class="ingredientes">
+            <h4>Ingredientes</h4>
+            <ul>
+              <li>160 g de fideos de arroz planos</li>
+              <li>200 g de pechuga de pollo en tiras</li>
+              <li>2 huevos</li>
+              <li>2 dientes de ajo picados</li>
+              <li>100 g de brotes de soja</li>
+              <li>2 cebollas de verdeo en tiras</li>
+              <li>40 g de maní tostado picado</li>
+              <li>30 ml de aceite</li>
+              <li>1 lima en gajos</li>
+              <li>Salsa: 30 ml de salsa de pescado, 30 g de azúcar rubia y 30 ml de jugo de lima</li>
+            </ul>
+            <p class="alergenos"><b>Alérgenos</b>Pescado, huevo, maní, soja.</p>
           </div>
-          <p class="hero__note" data-offer-only>
-            <span aria-hidden="true">🎁</span> Con la <strong>Guía de despensa del mundo</strong> de regalo · Precio de lanzamiento hasta el 31 de diciembre
-          </p>
+          <div class="pasos">
+            <h4>Paso a paso</h4>
+            <ol>
+              <li>Remojá los fideos en agua tibia 15 minutos, hasta que estén flexibles, y escurrilos.</li>
+              <li>Mezclá los ingredientes de la salsa hasta disolver el azúcar.</li>
+              <li>Calentá el aceite a fuego fuerte y dorá el pollo 4 minutos. Sumá el ajo y cociná 30 segundos.</li>
+              <li>Corré todo a un costado, agregá los huevos y revolvelos hasta que cuajen.</li>
+              <li>Incorporá los fideos y la salsa. Salteá 2 minutos, hasta que los fideos estén tiernos y la salsa se absorba.</li>
+              <li>Apagá el fuego, sumá los brotes y el verdeo, y serví con maní y lima.</li>
+            </ol>
+          </div>
         </div>
 
-        <div class="hero__book" aria-label="Vista del recetario">
-          <figure class="page page--back page--left">
-            <img src="img/guia-rapida.webp" width="800" height="1132" alt="Página de la guía rápida «¿Qué cocino hoy?», con recetas agrupadas por momento y su número de página" loading="eager">
-          </figure>
-          <figure class="page page--back page--right">
-            <img src="img/receta-pad-thai.webp" width="800" height="1132" alt="Página de una receta del recetario: fideos salteados tailandeses, con tiempos, ingredientes y paso a paso" loading="eager">
-          </figure>
-          <figure class="page page--front">
-            <img src="img/portada.webp" width="900" height="1273" alt="Portada del recetario digital Del guardado al plato" fetchpriority="high">
-          </figure>
+        <div class="receta__notas">
+          <p><b>Consejo</b>Si los fideos siguen duros, agregá 2 cucharadas de agua y seguí salteando. No los remojes de más o se van a romper.</p>
+          <p><b>Sustitución</b>El pad thai tradicional lleva pasta de tamarindo; aquí se reemplaza por lima, con un sabor más cítrico y menos profundo.</p>
         </div>
       </div>
-    </section>
+    </article>
 
-    <!-- 3. Frase -->
-    <section class="quote" aria-label="Frase de la marca">
-      <blockquote>
-        <p>«Cocinar es una forma de demostrar cariño.»</p>
-        <footer>SOPHIETASTE</footer>
-      </blockquote>
-    </section>
-
-    <!-- 4. Oferta -->
-    <section class="offer" id="oferta" aria-labelledby="offer-title">
-      <div class="offer__card">
-        <p class="eyebrow" data-offer-only>Precio de lanzamiento</p>
-        <h2 id="offer-title" class="offer__product">Del guardado al plato</h2>
-        <p class="offer__format">Recetario digital · PDF de 100 páginas</p>
-
-        <p class="offer__price"><span data-price>USD 6</span> <span class="offer__once">· pago único</span></p>
-        <p class="offer__deadline" data-offer-only>Hasta el 31 de diciembre · Después, <span data-regular-price>USD 10</span></p>
-
-        <div class="bonus">
-          <p class="bonus__title"><span aria-hidden="true">🎁</span> De regalo con tu compra: <strong>Guía de despensa del mundo</strong></p>
-          <p class="bonus__text">Qué tener en casa para cocinar las 88 recetas sin salir corriendo al súper.</p>
-        </div>
-
-        <ul class="includes" aria-label="Qué incluye">
-          <li>88 recetas de cuatro continentes, probadas una por una</li>
-          <li>Guía rápida «¿Qué cocino hoy?»</li>
-          <li>Glosario de ingredientes entre países</li>
-          <li>Lista de compras y planificador semanal</li>
-        </ul>
-
-        <a class="btn btn--buy btn--block" data-checkout href="https://pay.hotmart.com/C108411608Q?off=fpn26sij">Comprar el recetario + bono</a>
-        <p class="offer__terms">Pago seguro con Hotmart · Garantía de 7 días antes de descargar el PDF</p>
+    <div class="regalo__cierre revela">
+      <h3>Te quedan <em>87 recetas más.</em></h3>
+      <div>
+        <a class="btn" data-comprar href="https://pay.hotmart.com/C108411608Q?off=fpn26sij">Quiero las 88 · <span data-precio>USD 6</span> <span class="flecha" aria-hidden="true">→</span></a>
+        <p class="garantia">Pago seguro con Hotmart · Garantía de 7 días antes de descargar el PDF</p>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- 5. Receta de regalo -->
-    <section class="gift" id="receta" aria-labelledby="gift-title">
-      <div class="gift__inner">
-        <p class="eyebrow">Una muestra antes de comprar</p>
-        <h2 id="gift-title">Te regalamos una receta completa</h2>
-        <p class="gift__lead">Es una de las 88 del recetario, tal como está en el libro. Cocinala y fijate si es lo que buscás.</p>
+<!-- 10. SOBRE SOPHIETASTE -->
+<section class="sobre oscuro" aria-labelledby="sobre-titulo">
+  <figure class="sobre__foto">
+    <img src="img/locro.jpg" alt="Locro servido en un cuenco: guiso de maíz y zapallo" width="1200" height="800" loading="lazy" decoding="async">
+    <span class="plato__ilus">Imagen ilustrativa</span>
+  </figure>
+  <div class="sobre__txt revela">
+    <p class="etiqueta">Sobre SOPHIETASTE</p>
+    <h2 class="h-l" id="sobre-titulo">Cocinar es una forma de <em>demostrar cariño.</em></h2>
+    <p>La energía y el amor con que cocinás se notan en el plato. Y sin embargo, hoy guardamos ideas de Instagram que nunca llegamos a hacer.</p>
+    <p>Un video de un minuto no te muestra cantidades ni tiempos, y hay que verlo diez veces para entenderlo. Por eso SOPHIETASTE hace recetarios: no pasan de moda, unen lo digital con el papel y son una inversión en tu cocina.</p>
+    <ul class="valores">
+      <li><b>Hecho con cariño</b><span>Todas las recetas fueron cocinadas y probadas.</span></li>
+      <li><b>Completo, no a medias</b><span>Cantidades, tiempos, alérgenos, consejo y sustitución en cada receta.</span></li>
+      <li><b>Digital y en papel</b><span>Lo leés en el celular y lo imprimís cuando lo querés en la cocina.</span></li>
+    </ul>
+  </div>
+</section>
 
-        <details class="recipe">
-          <summary>Ver la receta de regalo (pad thai)</summary>
-          <article class="recipe__body" aria-label="Receta: fideos salteados tailandeses">
-            <p class="recipe__region"><span class="dot" aria-hidden="true"></span>Asia</p>
-            <h3>Fideos salteados tailandeses</h3>
-            <p class="recipe__alt">Pad thai</p>
-            <p class="recipe__origin">Tailandia. Se difundió como plato nacional hacia las décadas de 1930 y 1940.</p>
-            <p>Dulce, ácido y salado en un mismo bocado. Se resuelve en una sola sartén y sorprende como comida de restaurante.</p>
-
-            <dl class="recipe__meta">
-              <div><dt>Preparación</dt><dd>20 min</dd></div>
-              <div><dt>Cocción</dt><dd>10 min</dd></div>
-              <div><dt>Total</dt><dd><strong>30 min</strong></dd></div>
-              <div><dt>Porciones</dt><dd>2</dd></div>
-              <div><dt>Dificultad</dt><dd>Media</dd></div>
-            </dl>
-            <p class="tag">Salir de la rutina</p>
-
-            <div class="recipe__cols">
-              <div>
-                <h4>Ingredientes</h4>
-                <ul class="recipe__ingredients">
-                  <li>160 g de fideos de arroz planos</li>
-                  <li>200 g de pechuga de pollo en tiras</li>
-                  <li>2 huevos</li>
-                  <li>2 dientes de ajo picados</li>
-                  <li>100 g de brotes de soja</li>
-                  <li>2 cebollas de verdeo en tiras</li>
-                  <li>40 g de maní tostado picado</li>
-                  <li>30 ml de aceite</li>
-                  <li>1 lima en gajos</li>
-                  <li>Salsa: 30 ml de salsa de pescado, 30 g de azúcar rubia y 30 ml de jugo de lima</li>
-                </ul>
-                <p class="recipe__allergens"><strong>Alérgenos:</strong> pescado, huevo, maní, soja.</p>
-              </div>
-              <div>
-                <h4>Paso a paso</h4>
-                <ol class="recipe__steps">
-                  <li>Remojá los fideos en agua tibia 15 minutos, hasta que estén flexibles, y escurrilos.</li>
-                  <li>Mezclá los ingredientes de la salsa hasta disolver el azúcar.</li>
-                  <li>Calentá el aceite a fuego fuerte y dorá el pollo 4 minutos. Sumá el ajo y cociná 30 segundos.</li>
-                  <li>Corré todo a un costado, agregá los huevos y revolvelos hasta que cuajen.</li>
-                  <li>Incorporá los fideos y la salsa. Salteá 2 minutos, hasta que los fideos estén tiernos y la salsa se absorba.</li>
-                  <li>Apagá el fuego, sumá los brotes y el verdeo, y serví con maní y lima.</li>
-                </ol>
-              </div>
-            </div>
-
-            <div class="recipe__tips">
-              <p><strong>Consejo:</strong> si los fideos siguen duros, agregá 2 cucharadas de agua y seguí salteando. No los remojes de más o se van a romper.</p>
-              <p><strong>Sustitución:</strong> el pad thai tradicional lleva pasta de tamarindo; acá se reemplaza por lima, con un sabor más cítrico y menos profundo.</p>
-            </div>
-
-            <div class="recipe__cta">
-              <p>Te quedan 87 recetas más por descubrir.</p>
-              <a class="btn btn--buy" data-checkout href="https://pay.hotmart.com/C108411608Q?off=fpn26sij">Comprar el recetario · <span data-price>USD 6</span></a>
-            </div>
-          </article>
-        </details>
+<!-- 11. OFERTA -->
+<section class="seccion oferta" id="oferta" aria-labelledby="oferta-titulo">
+  <div class="wrap oferta__grid">
+    <div class="oferta__libro revela">
+      <img src="img/portada.jpg" alt="Portada del recetario Del guardado al plato" width="720" height="1019" loading="lazy" decoding="async">
+      <span class="sello" aria-hidden="true"><small>Vol.</small>01</span>
+      <p class="leyenda" style="color:rgba(239,230,214,.72)">Imagen ilustrativa</p>
+    </div>
+    <div class="revela">
+      <p class="etiqueta">Del guardado al plato · Volumen 01</p>
+      <h2 class="h-l" id="oferta-titulo">Todo el recetario, <em>en tu celular hoy.</em></h2>
+      <ul class="incluye">
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9"/></svg>88 recetas de 4 continentes, 22 por continente</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9"/></svg>Una página y una foto por receta</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9"/></svg>Índice visual con foto, etiquetas y enlaces</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9"/></svg>Guía rápida «¿Qué cocino hoy?»</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9"/></svg>Glosario de ingredientes entre países</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9"/></svg>Lista de compras y planificador semanal</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9"/></svg>PDF de 104 páginas, para el celular o para imprimir</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9"/></svg>Todas las recetas, cocinadas y probadas</li>
+      </ul>
+      <p class="precio__etiqueta" data-lanzamiento>Precio de lanzamiento</p>
+      <div class="precio"><span class="precio__n" data-precio>USD 6</span><span class="precio__t">Pago único</span></div>
+      <p class="precio__plazo" data-lanzamiento>Hasta el 31 de diciembre · Después, USD 10</p>
+      <div class="bono">
+        <p class="bono__titulo"><span aria-hidden="true">🎁</span> De regalo con tu compra: <b>Guía de despensa del mundo</b></p>
+        <p class="bono__texto">Qué tener en casa para cocinar las 88 recetas sin salir corriendo al súper.</p>
       </div>
-    </section>
+      <p class="condiciones">Pago seguro con Hotmart · El precio se muestra en tu moneda al pagar · Garantía de 7 días antes de descargar el PDF · <a href="politicas.html">Ver política de reembolso</a></p>
+      <a class="btn btn--crema" data-comprar href="https://pay.hotmart.com/C108411608Q?off=fpn26sij">Comprar el recetario + bono <span class="flecha" aria-hidden="true">→</span></a>
+      <p class="garantia">Pago seguro con Hotmart · Garantía de 7 días antes de descargar el PDF</p>
+      <a class="link" href="#regalo">¿Querés probar antes de comprar? Cociná gratis el pad thai completo →</a>
+    </div>
+  </div>
+</section>
 
-    <!-- 6. Más recetas -->
-    <section class="more" aria-label="Más recetarios">
-      <button type="button" class="btn btn--outline" id="more-btn" aria-haspopup="dialog" aria-controls="more-dialog">Más recetas</button>
-    </section>
-  </main>
+<!-- 12. COLECCIÓN -->
+<section class="seccion fondo-arena coleccion" aria-labelledby="coleccion-titulo">
+  <div class="wrap">
+    <div class="revela">
+      <p class="etiqueta">Recetarios por el mundo</p>
+      <h2 class="h-l" id="coleccion-titulo">Este es el primero. <em>Vienen más.</em></h2>
+    </div>
+    <ul class="coleccion__grid">
+      <li class="vol vol--activo revela">
+        <span class="vol__n">01</span>
+        <h3>Del guardado <em>al plato</em></h3>
+        <p>88 recetas de 4 continentes.</p>
+        <p class="vol__estado">Disponible</p>
+      </li>
+      <li class="vol vol--prox revela">
+        <span class="vol__n">02</span>
+        <h3>Nuevo recetario en preparación</h3>
+        <p class="vol__estado">Próximamente</p>
+      </li>
+      <li class="vol vol--prox revela">
+        <span class="vol__n">03</span>
+        <h3>Más destinos por descubrir</h3>
+        <p class="vol__estado">En camino</p>
+      </li>
+    </ul>
+    <p class="coleccion__ig"><a class="link" href="https://www.instagram.com/sophietaste/" target="_blank" rel="noopener">Seguí a @sophietaste en Instagram <span class="sr">(se abre en una pestaña nueva)</span> →</a></p>
+  </div>
+</section>
 
-  <dialog class="modal" id="more-dialog" aria-labelledby="more-title" aria-describedby="more-text">
-    <p class="eyebrow">Recetarios por el mundo</p>
-    <h2 id="more-title">En preparación</h2>
-    <p id="more-text">Nuevos recetarios de la colección Recetarios por el mundo ya están en la cocina.</p>
-    <button type="button" class="btn btn--buy btn--block" id="more-close">Cerrar</button>
-  </dialog>
+<!-- 13. PREGUNTAS -->
+<section class="seccion faq" id="preguntas" aria-labelledby="faq-titulo">
+  <div class="wrap faq__grid">
+    <div class="revela">
+      <p class="etiqueta">Preguntas frecuentes</p>
+      <h2 class="h-l" id="faq-titulo">Antes de <em>comprar.</em></h2>
+    </div>
+    <div class="revela">
+      <details>
+        <summary>¿Cómo y cuándo recibo el recetario?</summary>
+        <div class="faq__resp"><p>Apenas se confirma el pago, Hotmart te envía un correo con el acceso al PDF. También lo encontrás en tu cuenta de Hotmart, en «Mis compras». Con tarjeta suele ser inmediato; con otros medios de pago puede tardar algunas horas.</p></div>
+      </details>
+      <details>
+        <summary>¿En qué formato viene?</summary>
+        <div class="faq__resp"><p>Es un PDF de 104 páginas. Se lee en el celular, la tablet o la computadora, y se puede imprimir.</p></div>
+      </details>
+      <details>
+        <summary>No me llegó el correo o no puedo abrir el archivo. ¿Qué hago?</summary>
+        <div class="faq__resp"><p>Revisá spam y promociones, y entrá a «Mis compras» en Hotmart con el correo que usaste. Si sigue sin aparecer o no abre, escribinos a <a href="mailto:sophieteayuda@gmail.com">sophieteayuda@gmail.com</a> y lo resolvemos, sin importar cuándo compraste.</p></div>
+      </details>
+      <details>
+        <summary>¿Tiene garantía?</summary>
+        <div class="faq__resp"><p>Sí. Tenés 7 días desde la compra para pedir la devolución, siempre que todavía no hayas descargado el PDF. Lo pedís en <a href="https://refund.hotmart.com" target="_blank" rel="noopener">refund.hotmart.com</a> con el número de transacción de tu correo. Hotmart lo devuelve por el mismo medio de pago: la aprobación puede tardar hasta 7 días y, con tarjeta, el reintegro puede verse en el resumen actual o en el siguiente.</p></div>
+      </details>
+      <details>
+        <summary>¿Cómo pido ayuda?</summary>
+        <div class="faq__resp"><p>Escribinos a <a href="mailto:sophieteayuda@gmail.com">sophieteayuda@gmail.com</a>. Respondemos dentro de 1 día hábil.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
 
-  <!-- 7. Pie -->
-  <footer class="site-footer">
-    <p class="brand__name">SOPHIETASTE</p>
-    <p>Soporte: <a href="mailto:sophieteayuda@gmail.com">sophieteayuda@gmail.com</a> · Respuesta en 1 día hábil</p>
-    <p class="site-footer__small">El precio se muestra en tu moneda al pagar en Hotmart.</p>
-  </footer>
+<!-- 14. CIERRE -->
+<section class="cierre" id="cierre" aria-labelledby="cierre-titulo">
+  <figure class="cierre__fondo">
+    <img src="img/cierre.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async">
+  </figure>
+  <div class="wrap">
+    <h2 class="revela" id="cierre-titulo">La próxima vez que veas una receta increíble, guardala si querés. <em>Pero hoy ya tenés algo rico para cocinar.</em></h2>
+    <a class="btn" data-comprar href="https://pay.hotmart.com/C108411608Q?off=fpn26sij">Quiero el recetario · <span data-precio>USD 6</span> <span class="flecha" aria-hidden="true">→</span></a>
+    <p class="garantia">Pago seguro con Hotmart · Garantía de 7 días antes de descargar el PDF</p>
+  </div>
+  <span class="plato__ilus">Imagen ilustrativa</span>
+</section>
 
-  <script src="script.js" defer></script>
+</main>
+
+<!-- 15. PIE -->
+<footer class="pie">
+  <div class="wrap pie__in">
+    <div>
+      <p class="pie__marca"><b>SOPHIETASTE</b> · <em>Recetarios por el mundo</em></p>
+      <p>Contacto: <a href="mailto:sophieteayuda@gmail.com">sophieteayuda@gmail.com</a> · Pagos procesados por Hotmart</p>
+    </div>
+    <nav class="pie__links" aria-label="Legales">
+      <a href="politicas.html">Política de reembolso</a>
+      <a href="https://refund.hotmart.com" target="_blank" rel="noopener">Botón de arrepentimiento<span class="sr"> (se abre en una pestaña nueva)</span></a>
+    </nav>
+  </div>
+</footer>
+
+<!-- Barra de compra fija (celular) -->
+<div class="barra" id="barra" aria-hidden="true">
+  <p class="barra__txt"><b>Del guardado al plato</b>Pago seguro · Garantía de 7 días</p>
+  <a class="btn btn--chico" data-comprar href="https://pay.hotmart.com/C108411608Q?off=fpn26sij" tabindex="-1">Comprar · <span data-precio>USD 6</span></a>
+</div>
+
+<script src="script.js" defer></script>
 </body>
 </html>
