@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Del guardado al plato · Recetario digital · SOPHIETASTE</title>
+  <meta name="description" content="88 recetas de Asia, Europa, América Latina y África, organizadas para responder a la pregunta de todos los días: ¿qué cocino hoy? Precio de lanzamiento USD 6 con la Guía de despensa del mundo de regalo.">
+  <meta name="theme-color" content="#CD795B">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Del guardado al plato · ¿Qué cocino hoy?">
+  <meta property="og:description" content="88 recetas del mundo + Guía de despensa del mundo de regalo. Precio de lanzamiento: USD 6 hasta el 31 de diciembre.">
+  <meta property="og:image" content="https://sophietaste.netlify.app/img/og.jpg">
+  <meta property="og:url" content="https://sophietaste.netlify.app/">
+
+  <link rel="preload" href="fonts/lora-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#oferta">Ir a la oferta</a>
+
+  <!-- 1. Barra superior -->
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="#inicio" aria-label="SOPHIETASTE · Recetarios por el mundo, volver al inicio">
+        <span class="brand__name">SOPHIETASTE</span>
+        <span class="brand__collection">Recetarios por el mundo</span>
+      </a>
+      <a class="btn btn--buy btn--small" data-checkout href="https://pay.hotmart.com/C108411608Q?off=fpn26sij">
+        Comprar · <span data-price>USD 6</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <!-- 2. Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow">Edición 01 · Recetario digital</p>
+          <h1 id="hero-title">¿Qué cocino hoy?</h1>
+          <p class="hero__lead"><em>Del guardado al plato</em> reúne 88 recetas de Asia, Europa, América Latina y África, organizadas para que dejes de guardarlas y empieces a cocinarlas.</p>
+          <ul class="facts" aria-label="Formato">
+            <li>PDF de 100 páginas</li>
+            <li>Para el celular o para imprimir</li>
+          </ul>
+          <div class="hero__actions">
+            <a class="btn btn--buy" data-checkout href="https://pay.hotmart.com/C108411608Q?off=fpn26sij">
+              Comprar el recetario · <span data-price>USD 6</span>
+            </a>
+            <a class="btn btn--ghost" href="#receta">Probá una receta gratis</a>
+          </div>
+          <p class="hero__note" data-offer-only>
+            <span aria-hidden="true">🎁</span> Con la <strong>Guía de despensa del mundo</strong> de regalo · Precio de lanzamiento hasta el 31 de diciembre
+          </p>
+        </div>
+
+        <div class="hero__book" aria-label="Vista del recetario">
+          <figure class="page page--back page--left">
+            <img src="img/guia-rapida.webp" width="800" height="1132" alt="Página de la guía rápida «¿Qué cocino hoy?», con recetas agrupadas por momento y su número de página" loading="eager">
+          </figure>
+          <figure class="page page--back page--right">
+            <img src="img/receta-pad-thai.webp" width="800" height="1132" alt="Página de una receta del recetario: fideos salteados tailandeses, con tiempos, ingredientes y paso a paso" loading="eager">
+          </figure>
+          <figure class="page page--front">
+            <img src="img/portada.webp" width="900" height="1273" alt="Portada del recetario digital Del guardado al plato" fetchpriority="high">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Frase -->
+    <section class="quote" aria-label="Frase de la marca">
+      <blockquote>
+        <p>«Cocinar es una forma de demostrar cariño.»</p>
+        <footer>SOPHIETASTE</footer>
+      </blockquote>
+    </section>
+
+    <!-- 4. Oferta -->
+    <section class="offer" id="oferta" aria-labelledby="offer-title">
+      <div class="offer__card">
+        <p class="eyebrow" data-offer-only>Precio de lanzamiento</p>
+        <h2 id="offer-title" class="offer__product">Del guardado al plato</h2>
+        <p class="offer__format">Recetario digital · PDF de 100 páginas</p>
+
+        <p class="offer__price"><span data-price>USD 6</span> <span class="offer__once">· pago único</span></p>
+        <p class="offer__deadline" data-offer-only>Hasta el 31 de diciembre · Después, <span data-regular-price>USD 10</span></p>
+
+        <div class="bonus">
+          <p class="bonus__title"><span aria-hidden="true">🎁</span> De regalo con tu compra: <strong>Guía de despensa del mundo</strong></p>
+          <p class="bonus__text">Qué tener en casa para cocinar las 88 recetas sin salir corriendo al súper.</p>
+        </div>
+
+        <ul class="includes" aria-label="Qué incluye">
+          <li>88 recetas de cuatro continentes, probadas una por una</li>
+          <li>Guía rápida «¿Qué cocino hoy?»</li>
+          <li>Glosario de ingredientes entre países</li>
+          <li>Lista de compras y planificador semanal</li>
+        </ul>
+
+        <a class="btn btn--buy btn--block" data-checkout href="https://pay.hotmart.com/C108411608Q?off=fpn26sij">Comprar el recetario + bono</a>
+        <p class="offer__terms">Pago seguro con Hotmart · Garantía de 7 días antes de descargar el PDF</p>
+      </div>
+    </section>
+
+    <!-- 5. Receta de regalo -->
+    <section class="gift" id="receta" aria-labelledby="gift-title">
+      <div class="gift__inner">
+        <p class="eyebrow">Una muestra antes de comprar</p>
+        <h2 id="gift-title">Te regalamos una receta completa</h2>
+        <p class="gift__lead">Es una de las 88 del recetario, tal como está en el libro. Cocinala y fijate si es lo que buscás.</p>
+
+        <details class="recipe">
+          <summary>Ver la receta de regalo (pad thai)</summary>
+          <article class="recipe__body" aria-label="Receta: fideos salteados tailandeses">
+            <p class="recipe__region"><span class="dot" aria-hidden="true"></span>Asia</p>
+            <h3>Fideos salteados tailandeses</h3>
+            <p class="recipe__alt">Pad thai</p>
+            <p class="recipe__origin">Tailandia. Se difundió como plato nacional hacia las décadas de 1930 y 1940.</p>
+            <p>Dulce, ácido y salado en un mismo bocado. Se resuelve en una sola sartén y sorprende como comida de restaurante.</p>
+
+            <dl class="recipe__meta">
+              <div><dt>Preparación</dt><dd>20 min</dd></div>
+              <div><dt>Cocción</dt><dd>10 min</dd></div>
+              <div><dt>Total</dt><dd><strong>30 min</strong></dd></div>
+              <div><dt>Porciones</dt><dd>2</dd></div>
+              <div><dt>Dificultad</dt><dd>Media</dd></div>
+            </dl>
+            <p class="tag">Salir de la rutina</p>
+
+            <div class="recipe__cols">
+              <div>
+                <h4>Ingredientes</h4>
+                <ul class="recipe__ingredients">
+                  <li>160 g de fideos de arroz planos</li>
+                  <li>200 g de pechuga de pollo en tiras</li>
+                  <li>2 huevos</li>
+                  <li>2 dientes de ajo picados</li>
+                  <li>100 g de brotes de soja</li>
+                  <li>2 cebollas de verdeo en tiras</li>
+                  <li>40 g de maní tostado picado</li>
+                  <li>30 ml de aceite</li>
+                  <li>1 lima en gajos</li>
+                  <li>Salsa: 30 ml de salsa de pescado, 30 g de azúcar rubia y 30 ml de jugo de lima</li>
+                </ul>
+                <p class="recipe__allergens"><strong>Alérgenos:</strong> pescado, huevo, maní, soja.</p>
+              </div>
+              <div>
+                <h4>Paso a paso</h4>
+                <ol class="recipe__steps">
+                  <li>Remojá los fideos en agua tibia 15 minutos, hasta que estén flexibles, y escurrilos.</li>
+                  <li>Mezclá los ingredientes de la salsa hasta disolver el azúcar.</li>
+                  <li>Calentá el aceite a fuego fuerte y dorá el pollo 4 minutos. Sumá el ajo y cociná 30 segundos.</li>
+                  <li>Corré todo a un costado, agregá los huevos y revolvelos hasta que cuajen.</li>
+                  <li>Incorporá los fideos y la salsa. Salteá 2 minutos, hasta que los fideos estén tiernos y la salsa se absorba.</li>
+                  <li>Apagá el fuego, sumá los brotes y el verdeo, y serví con maní y lima.</li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="recipe__tips">
+              <p><strong>Consejo:</strong> si los fideos siguen duros, agregá 2 cucharadas de agua y seguí salteando. No los remojes de más o se van a romper.</p>
+              <p><strong>Sustitución:</strong> el pad thai tradicional lleva pasta de tamarindo; acá se reemplaza por lima, con un sabor más cítrico y menos profundo.</p>
+            </div>
+
+            <div class="recipe__cta">
+              <p>Te quedan 87 recetas más por descubrir.</p>
+              <a class="btn btn--buy" data-checkout href="https://pay.hotmart.com/C108411608Q?off=fpn26sij">Comprar el recetario · <span data-price>USD 6</span></a>
+            </div>
+          </article>
+        </details>
+      </div>
+    </section>
+
+    <!-- 6. Más recetas -->
+    <section class="more" aria-label="Más recetarios">
+      <button type="button" class="btn btn--outline" id="more-btn" aria-haspopup="dialog" aria-controls="more-dialog">Más recetas</button>
+    </section>
+  </main>
+
+  <dialog class="modal" id="more-dialog" aria-labelledby="more-title" aria-describedby="more-text">
+    <p class="eyebrow">Recetarios por el mundo</p>
+    <h2 id="more-title">En preparación</h2>
+    <p id="more-text">Nuevos recetarios de la colección Recetarios por el mundo ya están en la cocina.</p>
+    <button type="button" class="btn btn--buy btn--block" id="more-close">Cerrar</button>
+  </dialog>
+
+  <!-- 7. Pie -->
+  <footer class="site-footer">
+    <p class="brand__name">SOPHIETASTE</p>
+    <p>Soporte: <a href="mailto:sophieteayuda@gmail.com">sophieteayuda@gmail.com</a> · Respuesta en 1 día hábil</p>
+    <p class="site-footer__small">El precio se muestra en tu moneda al pagar en Hotmart.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
